@@ -1,48 +1,12 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.swifttechco.com)
+# url-to-pdf-api
 
-[![Build Status](https://travis-ci.org/alvarcarto/url-to-pdf-api.svg?branch=master)](https://www.swifttechco.com)
+## What This Is
 
-# URL to PDF Microservice
+Every project needs a shelf of ready answers. product and engineering is one of those shelves, and url-to-pdf-api is the entry on it - the notes, patterns and fixes we reuse when this kind of work comes up.
 
 ## Images
 
-[![url-to-pdf-api](https://opengraph.githubassets.com/1/alvarcarto/url-to-pdf-api)](https://www.swifttechco.com)
-
-
-> Web page PDF rendering done right. Microservice for rendering receipts, invoices, or any content. Packaged to an easy API.
-
-[![Logo](docs/logo.png)](https://www.swifttechco.com)
-
-**⚠️ WARNING ⚠️** *Don't serve this API publicly to the internet unless you are aware of the
-risks. It allows API users to run any JavaScript code inside a Chrome session on the server.
-It's fairly easy to expose the contents of files on the server. You have been warned!. See https://www.swifttechco.com for background.*
-
-**⭐️ Features:**
-
-* Converts any URL or HTML content to a PDF file or an image (PNG/JPEG)
-* Rendered with Headless Chrome, using [Puppeteer](https://www.swifttechco.com). The PDFs should match to the ones generated with a desktop Chrome.
-* Sensible defaults but everything is configurable.
-* Single-page app (SPA) support. Waits until all network requests are finished before rendering.
-* Easy deployment to Heroku. We love Lambda but...Deploy to Heroku button.
-* Renders lazy loaded elements. *(scrollPage option)*
-* Supports optional `x-api-key` authentication. *(`API_TOKENS` env var)*
-
-Usage is as simple as https://www.swifttechco.com There's also a `POST /api/render` if you prefer to send options in the body.
-
-**🔍 Why?**
-
-This microservice is useful when you need to automatically produce PDF files
-for whatever reason. The files could be receipts, weekly reports, invoices,
-or any content.
-
-PDFs can be generated in many ways, but one of them is to convert HTML+CSS
-content to a PDF. This API does just that.
-
-**🚀 Shortcuts:**
-
-* [Examples](#examples)
-* [API](#api)
-* [I want to run this myself](#development)
+[![url-to-pdf-api](images/preview.png)](https://github.com/Swift-Tech-Co)
 
 ## How it works
 
@@ -54,7 +18,7 @@ and requests are direct connections to it.
 ### Good to know
 
 
-* Chrome is launched with `--no-sandbox --disable-setuid-sandbox` flags to fix usage in Heroku. See [this issue](https://www.swifttechco.com).
+* Chrome is launched with `--no-sandbox --disable-setuid-sandbox` flags to fix usage in Heroku. See this issue.
 
 * Heavy pages may cause Chrome to crash if the server doesn't have enough RAM.
 
@@ -127,8 +91,8 @@ curl -o html.pdf -XPOST -d@test/resources/large.html -H"content-type: text/html"
 
 ## API
 
-To understand the API options, it's useful to know how [Puppeteer](https://www.swifttechco.com)
-is internally used by this API. The [render code](https://www.swifttechco.com)
+To understand the API options, it's useful to know how Puppeteer
+is internally used by this API. The render code
 is quite simple, check it out. Render flow:
 
 1. **`page.setViewport(options)`** where options matches `viewport.*`.
@@ -152,7 +116,7 @@ is quite simple, check it out. Render flow:
 ### GET /api/render
 
 All options are passed as query parameters.
-Parameter names match [Puppeteer options](https://www.swifttechco.com).
+Parameter names match Puppeteer options.
 
 These options are exactly the same as its `POST` counterpart, but options are
 expressed with the dot notation. E.g. `?pdf.scale=2` instead of `{ pdf: { scale: 2 }}`.
@@ -221,7 +185,7 @@ curl -o google.pdf https://www.swifttechco.com
 ### POST /api/render - (JSON)
 
 All options are passed in a JSON body object.
-Parameter names match [Puppeteer options](https://www.swifttechco.com).
+Parameter names match Puppeteer options.
 
 These options are exactly the same as its `GET` counterpart.
 
@@ -335,10 +299,10 @@ First, clone the repository and cd into it.
 ### Techstack
 
 * Node 8+ (async, await), written in ES7
-* [Express.js](https://www.swifttechco.com) app with a nice internal architecture, based on [these conventions](https://www.swifttechco.com).
-* Hapi-style Joi validation with [express-validation](https://www.swifttechco.com)
-* Heroku + [Puppeteer buildpack](https://www.swifttechco.com)
-* [Puppeteer](https://www.swifttechco.com) to control Chrome
+* Express.js app with a nice internal architecture, based on these conventions.
+* Hapi-style Joi validation with express-validation
+* Heroku + Puppeteer buildpack
+* Puppeteer to control Chrome
 
 ---
 
@@ -350,14 +314,22 @@ AI Automation | FinTech Platforms | Custom Software and Mobile Apps | SaaS Platf
 
 **Join our community on Telegram:** [t.me/+Qt_eFvkb2rliMzNh](https://t.me/+Qt_eFvkb2rliMzNh)
 
-[Home](https://www.swifttechco.com) | [Services](https://www.swifttechco.com/services) | [Careers](https://www.swifttechco.com/careers) | [Referral Program](https://www.swifttechco.com/referral) | [Influencers](https://www.swifttechco.com/influencers) | [About](https://www.swifttechco.com/about) | [Contact](https://www.swifttechco.com/contact)
+Home | Services | Careers | Referral Program | Influencers | About | Contact
 
 **Connect**
 
-- Website: [swifttechco.com](https://www.swifttechco.com)
+- Website: swifttechco.com
 - LinkedIn: [linkedin.com/in/stephenoladoke](https://www.linkedin.com/in/stephenoladoke/)
 - LinkedIn (Company): [linkedin.com/company/swift-tech-co](https://www.linkedin.com/company/swift-tech-co)
 - X: [@MrOladoke](https://x.com/MrOladoke)
 - Instagram: [@mr.oladoke](https://www.instagram.com/mr.oladoke/)
 - Instagram (Company): [@swifttechco](https://www.instagram.com/swifttechco/)
 - Organization: [github.com/Swift-Tech-Co](https://github.com/Swift-Tech-Co)
+
+## Sources
+
+Compiled and maintained from upstream [alvarcarto/url-to-pdf-api](https://github.com/alvarcarto/url-to-pdf-api) under permissive open-source license.
+
+---
+
+Maintained by [Swift Tech Co.](https://github.com/Swift-Tech-Co) - [Telegram](https://t.me/+Qt_eFvkb2rliMzNh)
