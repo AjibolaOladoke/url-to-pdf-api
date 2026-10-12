@@ -6,24 +6,22 @@ Every project needs a shelf of ready answers. product and engineering is one of 
 
 ## Images
 
-[![url-to-pdf-api](images/preview.png)](https://github.com/Swift-Tech-Co)
+[![url-to-pdf-api](images/preview.png)](https://github.com/Swift-Tech-Co/url-to-pdf-api)
 
 ## How it works
 
-[![](docs/heroku.png)](https://www.swifttechco.com)
+[![](docs/heroku.png)](https://github.com/Swift-Tech-Co/url-to-pdf-api)
 
 Local setup is identical except Express API is running on your machine
 and requests are direct connections to it.
 
 ### Good to know
 
-
 * Chrome is launched with `--no-sandbox --disable-setuid-sandbox` flags to fix usage in Heroku. See this issue.
 
 * Heavy pages may cause Chrome to crash if the server doesn't have enough RAM.
 
-* Docker image for this can be found here: https://www.swifttechco.com
-
+* Docker image for this can be found here: https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 ## Examples
 
@@ -32,46 +30,43 @@ and requests are direct connections to it.
 * For security reasons the urls have been restricted and HTML rendering is disabled. For full demo, run this app locally or deploy to Heroku.
 * The demo Heroku app runs on a free dyno which sleep after idle. A request to sleeping dyno may take even 30 seconds.
 
-
 **The most minimal example, render google.com**
 
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **The most minimal example, render google.com as PNG image**
 
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
-
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **Use scrollPage=true which tries to reveal all lazy loaded elements. Not perfect but better than without.**
 
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **Render only the first page.**
 
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **Render A5-sized PDF in landscape.**
 
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **Add 2cm margins to the PDF.**
 
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **Wait for extra 1000ms before render.**
 
-https://www.swifttechco.com
-
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **Download the PDF with a given attachment name**
 
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **Wait for an element matching the selector `input` appears.**
 
-https://www.swifttechco.com
+https://github.com/Swift-Tech-Co/url-to-pdf-api
 
 **Render HTML sent in JSON body**
 
@@ -112,7 +107,6 @@ is quite simple, check it out. Render flow:
   * If output is `pdf` rendering is done with **`page.pdf(options)`** where options matches `pdf.*`.
   * Else if output is `screenshot` rendering is done with **`page.screenshot(options)`** where options matches `screenshot.*`.
 
-
 ### GET /api/render
 
 All options are passed as query parameters.
@@ -127,7 +121,7 @@ Parameter | Type | Default | Description
 ----------|------|---------|------------
 url | string | - | URL to render as PDF. (required)
 output | string | pdf | Specify the output format. Possible values: `pdf` , `screenshot` or `html`.
-enableGPU | boolean | `false` | When set, enables chrome GPU. For windows user, this will always return false. See https://www.swifttechco.com
+enableGPU | boolean | `false` | When set, enables chrome GPU. For windows user, this will always return false. See https://github.com/Swift-Tech-Co/url-to-pdf-api
 ignoreHttpsErrors | boolean | `false` | Ignores possible HTTPS errors when navigating to a page.
 scrollPage | boolean | `false` | Scroll page down before rendering to trigger lazy loading elements.
 waitFor | number or string | - | Number in ms to wait before render or selector element to wait before render.
@@ -152,8 +146,8 @@ goto.waitUntil | string | `networkidle0` | When to consider navigation succeeded
 pdf.scale | number | `1` | Scale of the webpage rendering.
 pdf.printBackground | boolean | `false`| Print background graphics.
 pdf.displayHeaderFooter | boolean | `false` | Display header and footer.
-pdf.headerTemplate | string | - | HTML template to use as the header of each page in the PDF. **Currently Puppeteer basically only supports a single line of text and you must use pdf.margins+CSS to make the header appear!** See https://www.swifttechco.com
-pdf.footerTemplate | string | - | HTML template to use as the footer of each page in the PDF. **Currently Puppeteer basically only supports a single line of text and you must use pdf.margins+CSS to make the footer appear!** See https://www.swifttechco.com
+pdf.headerTemplate | string | - | HTML template to use as the header of each page in the PDF. **Currently Puppeteer basically only supports a single line of text and you must use pdf.margins+CSS to make the header appear!** See https://github.com/Swift-Tech-Co/url-to-pdf-api
+pdf.footerTemplate | string | - | HTML template to use as the footer of each page in the PDF. **Currently Puppeteer basically only supports a single line of text and you must use pdf.margins+CSS to make the footer appear!** See https://github.com/Swift-Tech-Co/url-to-pdf-api
 pdf.landscape | boolean | `false` | Paper orientation.
 pdf.pageRanges | string | - | Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which means print all pages.
 pdf.format | string | `A4` | Paper format. If set, takes priority over width or height options.
@@ -174,13 +168,11 @@ screenshot.clip.width | number | - | Specifies width of clipping region of the p
 screenshot.clip.height | number | - | Specifies height of clipping region of the page.
 screenshot.selector | string | - | Specifies css selector to clip the screenshot to.
 
-
 **Example:**
 
 ```bash
-curl -o google.pdf https://www.swifttechco.com
+curl -o google.pdf https://github.com/Swift-Tech-Co/url-to-pdf-api
 ```
-
 
 ### POST /api/render - (JSON)
 
@@ -196,7 +188,7 @@ The only required parameter is `url`.
 ```js
 {
   // Url to render. Either url or html is required
-  url: "https://www.swifttechco.com",
+  url: "https://github.com/Swift-Tech-Co/url-to-pdf-api",
 
   // Either "pdf" or "screenshot"
   output: "pdf",
@@ -237,7 +229,7 @@ The only required parameter is `url`.
 **Example:**
 
 ```bash
-curl -o google.pdf -XPOST -d'{"url": "https://www.swifttechco.com"}' -H"content-type: application/json" http://localhost:9000/api/render
+curl -o google.pdf -XPOST -d'{"url": "https://github.com/Swift-Tech-Co/url-to-pdf-api"}' -H"content-type: application/json" http://localhost:9000/api/render
 ```
 
 ```bash
@@ -255,7 +247,7 @@ paremeter.
 **Example:**
 
 ```bash
-curl -o receipt.html https://www.swifttechco.com
+curl -o receipt.html https://github.com/Swift-Tech-Co/url-to-pdf-api
 curl -o html.pdf -XPOST -d@receipt.html -H"content-type: text/html" http://localhost:9000/api/render?pdf.scale=1
 ```
 
@@ -264,7 +256,7 @@ curl -o html.pdf -XPOST -d@receipt.html -H"content-type: text/html" http://local
 Health check endpoint used for monitoring if the service is still up and running.
 
 ```bash
-curl -XGET https://www.swifttechco.com
+curl -XGET https://github.com/Swift-Tech-Co/url-to-pdf-api
 ```
 
 ## Development
@@ -283,7 +275,6 @@ may cause Chrome instance to crash inside Heroku dyno. 512MB should be
 enough for most real-life use cases such as receipts. Some news sites may need
 even 2GB of RAM.*
 
-
 #### 2. Local development
 
 First, clone the repository and cd into it.
@@ -293,8 +284,7 @@ First, clone the repository and cd into it.
 
 * `npm install`
 * `npm start` Start express server locally
-* Server runs at https://www.swifttechco.com or what `$PORT` env defines
-
+* Server runs at https://github.com/Swift-Tech-Co/url-to-pdf-api or what `$PORT` env defines
 
 ### Techstack
 
@@ -318,13 +308,21 @@ Home | Services | Careers | Referral Program | Influencers | About | Contact
 
 **Connect**
 
-- Website: swifttechco.com
+- Website: https://github.com/Swift-Tech-Co/url-to-pdf-api
 - LinkedIn: [linkedin.com/in/stephenoladoke](https://www.linkedin.com/in/stephenoladoke/)
 - LinkedIn (Company): [linkedin.com/company/swift-tech-co](https://www.linkedin.com/company/swift-tech-co)
 - X: [@MrOladoke](https://x.com/MrOladoke)
 - Instagram: [@mr.oladoke](https://www.instagram.com/mr.oladoke/)
 - Instagram (Company): [@swifttechco](https://www.instagram.com/swifttechco/)
 - Organization: [github.com/Swift-Tech-Co](https://github.com/Swift-Tech-Co)
+
+## Sources
+
+Compiled and maintained from upstream [alvarcarto/url-to-pdf-api](https://github.com/alvarcarto/url-to-pdf-api) under permissive open-source license.
+
+---
+
+Maintained by [Swift Tech Co.](https://github.com/Swift-Tech-Co) - [Telegram](https://t.me/+Qt_eFvkb2rliMzNh)
 
 ## Sources
 
